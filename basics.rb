@@ -1,5 +1,9 @@
 require 'sinatra'
 
+get '/' do
+  erb :index
+end
+
 get '/form' do
   erb :form
 end
@@ -18,6 +22,10 @@ end
 
 get '/decrypt/:secret' do
   params[:secret].reverse
+end
+
+get '/decrypt' do
+  "Type your encrypted message in the URL bar after a '/'."
 end
 
 not_found do
